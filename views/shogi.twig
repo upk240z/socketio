@@ -1,0 +1,48 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}将棋{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="/css/shogi.css"/>
+{% endblock %}
+
+{% block container %}
+    <h1>将棋</h1>
+
+    {% raw %}
+    <section id="board">
+        <form id="main-form" method="post" action="">
+            <div class="card">
+                <div id="stock-second" class="card-content z-depth-3 piece-stock" cell-no="-2">
+                    <div class="piece" v-for="piece in pieces" v-if="piece.position === -2" v-bind:piece-id="piece.id">
+                        <img v-bind:src="'img/pieces/' + piece.frontImg" class="downward">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content z-depth-3">
+                    <div class="clearfix">
+                        <div class="cell" v-for="i in 81" v-bind:cell-no="i">
+                            <div class="piece" v-if="getPiece(i)" v-bind:piece-id="getPiece(i).id">
+                                <img
+                                    v-bind:src="'img/pieces/' + (getPiece(i).isFront ? getPiece(i).frontImg : getPiece(i).backImg)"
+                                    v-bind:class="getPiece(i).isForward ? '': 'downward'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div id="stock-first" class="card-content z-depth-3 clearfix piece-stock" cell-no="-1">
+                    <div class="piece" v-for="piece in pieces" v-if="piece.position === -1" v-bind:piece-id="piece.id">
+                        <img v-bind:src="'img/pieces/' + piece.frontImg">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+    {% endraw %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/shogi.js"></script>
+{% endblock %}

@@ -1,0 +1,29 @@
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#board {
+  .cell {
+    width: 11.11%;
+    height: 80px;
+    float: left;
+    text-align: center;
+    border: 1px grey solid;
+    margin: -1px 0 0 -1px;
+    padding: 10px 0 10px 0;
+  }
+
+  .downward {
+    transform: rotateX(180deg);
+  }
+}
+
+#stock-first, #stock-second {
+  height: 80px;
+  .piece {
+    float: left;
+    z-index: 999;
+  }
+}

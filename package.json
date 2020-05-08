@@ -1,0 +1,36 @@
+{
+  "name": "socket-io",
+  "version": "0.0.1",
+  "description": "Socket IO",
+  "scripts": {
+    "build": "node-sass src/sass/ -o public/css --source-map true --source-comments && webpack",
+    "watch-sass": "node-sass -w src/sass/ -o public/css --source-map true --source-comments",
+    "watch-webpack": "webpack -w --display-error-details",
+    "start": "nodemon -V -e js,twig app.js --port=3000"
+  },
+  "author": "Baiman240z",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^5.1.0",
+    "express": "^4.17.1",
+    "node-sass": "^4.14.1",
+    "socket.io": "^2.3.0",
+    "twig": "^1.15.1"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.3.37",
+    "@types/jqueryui": "^1.12.10",
+    "@types/socket.io": "^2.1.4",
+    "@types/socket.io-client": "^1.4.32",
+    "jquery": "^3.5.0",
+    "jquery-ui": "^1.12.1",
+    "materialize-css": "^1.0.0",
+    "nodemon": "^2.0.3",
+    "ts-loader": "^7.0.2",
+    "typescript": "^3.8.3",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
