@@ -16,10 +16,12 @@ import {Piece} from "./classes/piece";
             pieces: manager.pieces
         },
         methods: {
-            getPiece: function(pos: number): Piece|any {
+            getPiece: function (pos: number): Piece | any {
                 // @ts-ignore
                 for (const p of this.pieces) {
-                    if (p.position == pos) { return p; }
+                    if (p.position == pos) {
+                        return p;
+                    }
                 }
                 return null;
             }
@@ -42,7 +44,7 @@ import {Piece} from "./classes/piece";
             revert: "invalid"
         });
         $('#board .cell').droppable({
-            drop: function(e, ui) {
+            drop: function (e, ui) {
                 const draggable = $(ui.draggable[0]);
                 const dragPieceId = parseInt(<string>draggable.attr('piece-id'));
                 const dropCellNo = parseInt(<string>$(this).attr('cell-no'));

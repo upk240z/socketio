@@ -5,6 +5,7 @@ export class PieceManager {
     get pieces(): Piece[] {
         return this._pieces;
     }
+
     set pieces(pieces: Piece[]) {
         this._pieces = pieces;
     }
@@ -66,23 +67,27 @@ export class PieceManager {
         }
     }
 
-    private findPieceById(id: number): Piece|null {
+    private findPieceById(id: number): Piece | null {
         for (const p of this._pieces) {
-            if (p.id == id) { return p; }
+            if (p.id == id) {
+                return p;
+            }
         }
         return null;
     }
 
-    public findPieceByPos(pos: number): Piece|null {
+    public findPieceByPos(pos: number): Piece | null {
         for (const p of this._pieces) {
-            if (p.position == pos) { return p; }
+            if (p.position == pos) {
+                return p;
+            }
         }
         return null;
     }
 
     public movePiece(dragPieceId: number, dropCellNo: number): void {
-        const dragPiece: Piece|any = this.findPieceById(dragPieceId);
-        const dropPiece: Piece|any = this.findPieceByPos(dropCellNo);
+        const dragPiece: Piece | any = this.findPieceById(dragPieceId);
+        const dropPiece: Piece | any = this.findPieceByPos(dropCellNo);
 
         dragPiece.position = dropCellNo;
         if (dropPiece != null) {

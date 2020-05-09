@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const http = require('http');
-const { program } = require('commander');
+const {program} = require('commander');
 const SocketServer = require('socket.io');
 
 app.set('views', path.join(__dirname, 'views'));

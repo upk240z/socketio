@@ -1,7 +1,7 @@
 import io from 'socket.io-client';
 
 export class ChatClient {
-    private readonly socket: SocketIOClient.Socket|any;
+    private readonly socket: SocketIOClient.Socket | any;
 
     constructor(url: string, callback: Function) {
         try {
