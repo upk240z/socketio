@@ -38,7 +38,7 @@ import {Piece} from "./classes/piece";
 
     $('#board').on('click', '.piece', function() {
         const id = parseInt(<string>$(this).attr('piece-id'));
-        client.reversePiece(id);
+        client.clickPiece(id);
     });
 
     const setEvent = () => {

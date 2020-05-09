@@ -27,9 +27,9 @@ export class ShogiClient {
             [1, false, 'kyo.png', 'nkyo.png'],
             [2, false, 'kei.png', 'nkei.png'],
             [3, false, 'gin.png', 'ngin.png'],
-            [4, false, 'kin.png', 'kin.png'],
-            [5, false, 'gyoku.png', 'gyoku.png'],
-            [6, false, 'kin.png', 'kin.png'],
+            [4, false, 'kin.png', null],
+            [5, false, 'gyoku.png', null],
+            [6, false, 'kin.png', null],
             [7, false, 'gin.png', 'ngin.png'],
             [8, false, 'kei.png', 'nkei.png'],
             [9, false, 'kyo.png', 'nkyo.png'],
@@ -58,9 +58,9 @@ export class ShogiClient {
             [73, true, 'kyo.png', 'nkyo.png'],
             [74, true, 'kei.png', 'nkei.png'],
             [75, true, 'gin.png', 'ngin.png'],
-            [76, true, 'kin.png', 'kin.png'],
-            [77, true, 'gyoku.png', 'gyoku.png'],
-            [78, true, 'kin.png', 'kin.png'],
+            [76, true, 'kin.png', null],
+            [77, true, 'gyoku.png', null],
+            [78, true, 'kin.png', null],
             [79, true, 'gin.png', 'ngin.png'],
             [80, true, 'kei.png', 'nkei.png'],
             [81, true, 'kyo.png', 'nkyo.png']
@@ -119,11 +119,23 @@ export class ShogiClient {
         this.send();
     }
 
-    public reversePiece(id: number): void {
+    public clickPiece(id: number): void {
         const piece = this.findPieceById(id);
-        if (piece != null) {
-            piece.isFront = !piece.isFront;
-            this.send();
+        if (piece == null) { return; }
+
+        if (piece.onlyFront) {
+            piece.isForward = !piece.isForward;
+            return;
         }
+
+        if (piece.isFront) {
+            piece.isFront = false;
+        } else {
+            piece.isForward = !piece.isForward;
+            piece.isFront = true;
+        }
+
+        console.log(piece.isFront + ':' + piece.isForward);
+        this.send();
     }
 }
