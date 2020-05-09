@@ -135,7 +135,6 @@ export class ShogiClient {
             piece.isFront = true;
         }
 
-        console.log(piece.isFront + ':' + piece.isForward);
         this.send();
     }
 }

@@ -43,8 +43,9 @@ import {Piece} from "./classes/piece";
 
     const setEvent = () => {
         $('.piece').draggable({
-            revert: "invalid"
-        });
+            revert: 'invalid',
+            zIndex: 100
+       });
         $('#board .cell').droppable({
             drop: function (e, ui) {
                 const draggable = $(ui.draggable[0]);
@@ -57,7 +58,8 @@ import {Piece} from "./classes/piece";
                     .css('left', '0');
                 app.$nextTick(() => {
                     $('.piece').draggable({
-                        revert: "invalid"
+                        revert: 'invalid',
+                        zIndex: 100
                     });
                 });
             }
