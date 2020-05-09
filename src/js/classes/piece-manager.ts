@@ -67,7 +67,7 @@ export class PieceManager {
         }
     }
 
-    private findPieceById(id: number): Piece | null {
+    public findPieceById(id: number): Piece | null {
         for (const p of this._pieces) {
             if (p.id == id) {
                 return p;

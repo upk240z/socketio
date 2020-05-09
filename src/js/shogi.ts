@@ -39,6 +39,15 @@ import {Piece} from "./classes/piece";
         }
     );
 
+    $('#board').on('click', '.piece', function() {
+        const id = parseInt(<string>$(this).attr('piece-id'));
+        const piece = manager.findPieceById(id);
+        if (piece != null) {
+            piece.isFront = !piece.isFront;
+            client.send(app.pieces);
+        }
+    });
+
     const setEvent = () => {
         $('.piece').draggable({
             revert: "invalid"

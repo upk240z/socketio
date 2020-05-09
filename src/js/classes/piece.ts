@@ -1,9 +1,9 @@
 export class Piece {
     readonly id: number;
-    readonly isForward: boolean;
     readonly frontImg: string;
     readonly backImg: string;
-    readonly isFront: boolean;
+    isForward: boolean;
+    isFront: boolean;
     position: number = 0; // -1:stock for first -2:stock for second
 
     constructor(
