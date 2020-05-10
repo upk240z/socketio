@@ -1,10 +1,20 @@
+@import "node_modules/materialize-css/sass/materialize";
+@import "space";
+
 .clearfix::after {
     content: "";
     display: block;
     clear: both;
 }
 
-#board {
+#chat-talk {
+    @extend .collection;
+    li {
+        @extend .collection-item;
+    }
+}
+
+#shogi-board {
     .cell {
         width: 11.11%;
         height: 80px;

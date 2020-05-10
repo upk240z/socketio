@@ -1,8 +1,0 @@
-@import "node_modules/materialize-css/sass/materialize";
-
-#talk {
-  @extend .collection;
-  li {
-    @extend .collection-item;
-  }
-}

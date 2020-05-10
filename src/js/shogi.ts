@@ -19,7 +19,7 @@ import {Piece} from "./classes/piece";
     );
 
     const app = new Vue({
-        el: '#board',
+        el: '#shogi-board',
         data: {
             pieces: client.pieces
         },
@@ -36,7 +36,7 @@ import {Piece} from "./classes/piece";
         }
     });
 
-    $('#board').on('click', '.piece', function() {
+    $('#shogi-board').on('click', '.piece', function() {
         const id = parseInt(<string>$(this).attr('piece-id'));
         client.clickPiece(id);
     });
