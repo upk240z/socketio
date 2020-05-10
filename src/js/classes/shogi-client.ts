@@ -109,11 +109,20 @@ export class ShogiClient {
         const dragPiece: Piece | any = this.findPieceById(dragPieceId);
         const dropPiece: Piece | any = this.findPieceByPos(dropCellNo);
 
-        if (dragPiece == dropPiece) { return; }
+        if (dragPiece == dropPiece) {
+            return;
+        }
 
         dragPiece.position = dropCellNo;
         if (dropPiece != null) {
             dropPiece.position = dragPiece.isForward ? -1 : -2;
+            dropPiece.isFront = true;
+            dropPiece.isForward = dropPiece.position == -1;
+        }
+
+        if (dragPiece.position < 0) {
+            dragPiece.isFront = true;
+            dragPiece.isForward = dragPiece.position == -1;
         }
 
         this.send();
@@ -121,7 +130,7 @@ export class ShogiClient {
 
     public clickPiece(id: number): void {
         const piece = this.findPieceById(id);
-        if (piece == null) { return; }
+        if (piece == null || piece.position < 0) { return; }
 
         if (piece.onlyFront) {
             piece.isForward = !piece.isForward;

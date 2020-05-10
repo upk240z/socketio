@@ -46,7 +46,7 @@ import {Piece} from "./classes/piece";
             revert: 'invalid',
             zIndex: 100
        });
-        $('#board .cell').droppable({
+        $('.cell, .piece-stock').droppable({
             drop: function (e, ui) {
                 const draggable = $(ui.draggable[0]);
                 const dragPieceId = parseInt(<string>draggable.attr('piece-id'));

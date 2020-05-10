@@ -12,7 +12,7 @@
     <section id="board">
         <form id="main-form" method="post" action="">
             <div class="card">
-                <div id="stock-second" class="card-content z-depth-3 piece-stock" cell-no="-2">
+                <div class="card-content z-depth-3 piece-stock" cell-no="-2">
                     <div class="piece" v-for="piece in pieces" v-if="piece.position === -2" v-bind:piece-id="piece.id">
                         <img v-bind:src="'img/pieces/' + piece.frontImg" class="downward">
                     </div>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="card">
-                <div id="stock-first" class="card-content z-depth-3 clearfix piece-stock" cell-no="-1">
+                <div class="card-content z-depth-3 clearfix piece-stock" cell-no="-1">
                     <div class="piece" v-for="piece in pieces" v-if="piece.position === -1" v-bind:piece-id="piece.id">
                         <img v-bind:src="'img/pieces/' + piece.frontImg">
                     </div>
