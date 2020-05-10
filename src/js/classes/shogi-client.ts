@@ -134,14 +134,13 @@ export class ShogiClient {
 
         if (piece.onlyFront) {
             piece.isForward = !piece.isForward;
-            return;
-        }
-
-        if (piece.isFront) {
-            piece.isFront = false;
         } else {
-            piece.isForward = !piece.isForward;
-            piece.isFront = true;
+            if (piece.isFront) {
+                piece.isFront = false;
+            } else {
+                piece.isForward = !piece.isForward;
+                piece.isFront = true;
+            }
         }
 
         this.send();
