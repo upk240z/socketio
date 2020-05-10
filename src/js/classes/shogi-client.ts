@@ -59,7 +59,7 @@ export class ShogiClient {
             [74, true, 'kei.png', 'nkei.png'],
             [75, true, 'gin.png', 'ngin.png'],
             [76, true, 'kin.png', null],
-            [77, true, 'gyoku.png', null],
+            [77, true, 'ou.png', null],
             [78, true, 'kin.png', null],
             [79, true, 'gin.png', 'ngin.png'],
             [80, true, 'kei.png', 'nkei.png'],

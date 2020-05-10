@@ -1,28 +1,36 @@
 .clearfix::after {
-  content: "";
-  display: block;
-  clear: both;
+    content: "";
+    display: block;
+    clear: both;
 }
 
 #board {
-  .cell {
-    width: 11.11%;
-    height: 80px;
-    float: left;
-    text-align: center;
-    border: 1px grey solid;
-    margin: -1px 0 0 -1px;
-    padding: 10px 0 10px 0;
-  }
+    .cell {
+        width: 11.11%;
+        height: 80px;
+        float: left;
+        text-align: center;
+        border: 1px grey solid;
+        margin: -1px 0 0 -1px;
+        padding: 10px 0 10px 0;
+    }
 
-  .downward {
-    transform: rotateX(180deg);
-  }
+    .downward {
+        transform: rotateX(180deg);
+    }
 }
 
 .piece-stock {
-  height: 80px;
-  .piece {
-    float: left;
-  }
+    @extend .clearfix;
+    min-height: 100px;
+    .piece {
+        float: left;
+    }
+}
+
+.piece {
+    img {
+        width: 48px;
+        height: 56px;
+    }
 }
