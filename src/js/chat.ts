@@ -2,8 +2,11 @@ import $ from 'jquery';
 import {ChatClient} from './classes/chat-client';
 // @ts-ignore
 import Vue from 'vue/dist/vue';
+import M from 'materialize-css';
 
 (() => {
+    M.AutoInit();
+
     const app = new Vue({
         el: '#app',
         data: {
