@@ -4,6 +4,8 @@ const app = express();
 const http = require('http');
 const {program} = require('commander');
 const SocketServer = require('socket.io');
+const ngrok = require('ngrok');
+const ngrokConfig = require('./config/ngrok.json');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'twig');
@@ -37,3 +39,11 @@ io.sockets.on('connection', (socket) => {
         socket.broadcast.json.emit('cast-shogi', data);
     });
 });
+
+(async function() {
+    const url = await ngrok.connect({
+        addr: 3000,
+        authtoken: ngrokConfig.token
+    });
+    console.log(url);
+})();
