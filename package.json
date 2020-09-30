@@ -30,6 +30,7 @@
     "jquery": "^3.5.0",
     "jquery-ui": "^1.12.1",
     "materialize-css": "^1.0.0",
+    "ngrok": "^3.3.0",
     "nodemon": "^2.0.3",
     "ts-loader": "^7.0.2",
     "typescript": "^3.8.3",
