@@ -2,7 +2,7 @@ import io from "socket.io-client";
 import {Piece} from "./piece";
 
 export class ShogiClient {
-    private readonly socket: SocketIOClient.Socket|any;
+    private readonly socket!: SocketIOClient.Socket;
 
     private _pieces: Piece[] = [];
     get pieces(): Piece[] {
@@ -81,7 +81,7 @@ export class ShogiClient {
 
     public send(): void {
         try {
-            this.socket.json.emit('send-shogi', this._pieces);
+            this.socket.emit('send-shogi', this._pieces);
         } catch (e) {
             console.log(e);
         }

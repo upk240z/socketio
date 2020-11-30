@@ -10,6 +10,7 @@ import {Piece} from "./classes/piece";
     const client = new ShogiClient(
         location.protocol + '//' + location.host,
         (data: Piece[]) => {
+            console.log(data);
             client.pieces = data;
             app.pieces = client.pieces;
             app.$nextTick(() => {

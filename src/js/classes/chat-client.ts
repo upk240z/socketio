@@ -1,7 +1,7 @@
 import io from 'socket.io-client';
 
 export class ChatClient {
-    private readonly socket: SocketIOClient.Socket | any;
+    private readonly socket!: SocketIOClient.Socket;
 
     constructor(url: string, callback: Function) {
         try {
@@ -16,7 +16,7 @@ export class ChatClient {
 
     public sendMessage(message: string) {
         try {
-            this.socket.json.emit('send-message', message);
+            this.socket.emit('send-message', message);
         } catch (e) {
             console.log(e);
         }
