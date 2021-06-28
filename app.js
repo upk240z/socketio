@@ -20,9 +20,11 @@ app.get('/shogi', function (req, res) {
 
 program.option('--port <number>', 'listen port');
 program.parse(process.argv);
+
+const options = program.opts();
 let port = 3000;
-if (program.port) {
-    port = program.port;
+if (options.port) {
+    port = options.port;
 }
 
 const server = http.createServer(app).listen(port);
