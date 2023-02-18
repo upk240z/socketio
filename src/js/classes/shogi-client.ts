@@ -1,8 +1,8 @@
-import io from "socket.io-client";
+import { io, Socket } from "socket.io-client";
 import {Piece} from "./piece";
 
 export class ShogiClient {
-    private readonly socket!: SocketIOClient.Socket;
+    private readonly socket!: Socket;
 
     private _pieces: Piece[] = [];
     get pieces(): Piece[] {
@@ -15,7 +15,7 @@ export class ShogiClient {
 
     constructor(url: string, callback: Function) {
         try {
-            this.socket = io.connect(url);
+            this.socket = io(url);
             this.socket.on('cast-shogi', (data: any) => {
                 callback(data);
             });

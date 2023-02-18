@@ -1,11 +1,11 @@
-import io from 'socket.io-client';
+import { io, Socket } from 'socket.io-client';
 
 export class ChatClient {
-    private readonly socket!: SocketIOClient.Socket;
+    private readonly socket!: Socket;
 
     constructor(url: string, callback: Function) {
         try {
-            this.socket = io.connect(url);
+            this.socket = io(url);
             this.socket.on('cast-message', (message: string) => {
                 callback(message);
             });

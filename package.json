@@ -5,7 +5,7 @@
   "scripts": {
     "build": "node-sass src/sass/ -o public/css && webpack --config prod.config.js",
     "watch-sass": "node-sass -w src/sass/ -o public/css --source-map true --source-comments",
-    "watch-webpack": "webpack -w --display-error-details",
+    "watch-webpack": "webpack -w",
     "start": "nodemon -V -e js,twig app.js --port=3000"
   },
   "author": "Baiman240z",
@@ -13,7 +13,7 @@
   "dependencies": {
     "commander": "^5.1.0",
     "express": "^4.17.1",
-    "socket.io": "^2.3.0",
+    "socket.io": "^4.6.0",
     "twig": "^1.15.1"
   },
   "devDependencies": {
@@ -22,20 +22,19 @@
     "@types/jquery": "^3.3.37",
     "@types/jqueryui": "^1.12.10",
     "@types/materialize-css": "^1.0.7",
-    "@types/socket.io": "^2.1.4",
-    "@types/socket.io-client": "^1.4.32",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^9.1.2",
     "core-js": "^3.6.5",
     "jquery": "^3.5.0",
     "jquery-ui": "^1.12.1",
     "materialize-css": "^1.0.0",
     "ngrok": "^4.3.1",
-    "node-sass": "^7.0.1",
+    "node-sass": "^8.0.0",
     "nodemon": "^2.0.3",
-    "ts-loader": "^7.0.2",
-    "typescript": "^3.8.3",
+    "socket.io-client": "^4.6.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.5",
     "vue": "^2.6.11",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   }
 }

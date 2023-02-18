@@ -35,10 +35,10 @@ console.log('http://localhost:' + port + '/');
 io.sockets.on('connection', (socket) => {
     socket.on('send-message', (message) => {
         console.log(message);
-        socket.broadcast.json.emit('cast-message', message);
+        socket.broadcast.emit('cast-message', message);
     });
     socket.on('send-shogi', (data) => {
-        socket.broadcast.json.emit('cast-shogi', data);
+        socket.broadcast.emit('cast-shogi', data);
     });
 });
 
